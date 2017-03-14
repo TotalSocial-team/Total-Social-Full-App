@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <title>PLEASURE Documentation</title>
+  <meta name="author" content="TeamFox">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="assets/css/documentation.css">
+  <link rel="stylesheet" href="assets/plugins/highlight/styles/atelier-forest.light.css">
+
+  <script src="assets/plugins/modernizr/modernizr.min.js"></script>
+
+</head>
+<body class="documentation" data-spy="scroll" data-target="#affix-nav">
+
+  <div class="intro">
+    <img src="assets/img/teamfox.png" class="teamfox" alt="Team Fox">
+  </div><!--.intro-->
+
+  <div class="container">
+    <div class="content-container">
+      <div class="row">
+        <div class="col-md-8">
+
+          <div id="getting-started" class="slide">
+            <h1>Getting Started</h1>
+
+            <p>Thank you for buying <strong>Pleasure</strong> and supporting Teamfox.</p>
+
+            <p><strong>Pleasure</strong> is an admin dashboard theme build on Bootstrap. You can use it for your administrator pages. It is <span class="text-green-sea"><strong>responsive</strong></span>, <span class="text-wisteria"><strong>functional</strong></span> and <span class="text-pomegranate"><strong>colorful</strong></span>. Our promise is that <strong>Pleasure</strong> will be constantly kept up to date.</p>
+
+            <p>If you want to get news about updates or new themes, please sign up your email address  at <a href="http://teamfox.co" target="_blank">teamfox.co</a> (we wont spam).</p>
+
+            <p>It is very simple to use or modify. In root folder, you will find build folder contains source of javascript and less files.</p>
+
+            <p>Lets look at folders to be much more familiarized with <strong>Pleasure</strong>.</p>
+          </div><!--.slide-->
+
+          <div id="file-structure" class="slide">
+            <h1>File Structure</h1>
+            <p>Here are folders that you will use while working on Pleasure.</p>
+<pre><code>Pleasure/
+├── app/                            // All HTML files
+│   ├── admin1/                     // HTML files for layout 1
+│   ├───────── demo/                // Neccessary files for ajax and some php stuff
+├── assets/                         // Contains all css, js and images
+│   ├───── admin1/                  // Related to only layout 1 files
+│   ├──────────── css/              // Compiled css files from build/admin1/less folder
+│   ├──────────────── themes/       // Color alternatives
+│   ├──────────── img/              // Related to layout 1 images
+│   ├──────────── js/               // Compiled js files from build/admin1/js folder
+│   ├───── globals/                 // Global assets for all layouts
+│   ├───────────── img/             // Images for all layouts
+│   ├───────────── plugins/         // Plugins for all layouts
+│   ├───────────── scripts/         // Compiled js initiliaziation for plugins
+├── bower/                          // Bower files
+├── build/                          // All build files
+│   ├───── admin1/                  // Build files for layout 1
+│   ├──────────── js/               // JS files for layout 1
+│   ├──────────── less/             // Less files to produce css files
+│   ├───────────────── layouts/     // Less files related to layouts
+│   ├───────────────── themes/      // Color alternatives
+│   ├───── elements/                // Elements for all layouts
+│   ├────────────── less/           // Less folder
+│   ├─────────────────── elements/  // Creating elements
+│   ├─────────────────── mixins/    // Less Mixins
+│   ├─────────────────── pages/     // Pages stylesheets
+│   ├───── globals/                 // Global build files
+│   ├───────────── js/              // Common js files
+│   ├───────────── less/            // Common less files
+│   ├───────────── scripts/         // Js initiliaziation for plugins
+├── documentation/                  // Documenation files
+├── grunt/                          // Grunt files
+├── resources/                      // Licensed files
+</code></pre>
+          </div><!--.slide-->
+
+          <div id="html-structure" class="slide">
+            <h1>HTML Structure</h1>
+            <p></p>
+
+            <legend>Beginning of Page</legend>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;!--[if lt IE 7]&gt;      &lt;html class="no-js lt-ie9 lt-ie8 lt-ie7"&gt; &lt;![endif]--&gt;
+&lt;!--[if IE 7]&gt;         &lt;html class="no-js lt-ie9 lt-ie8"&gt; &lt;![endif]--&gt;
+&lt;!--[if IE 8]&gt;         &lt;html class="no-js lt-ie9"&gt; &lt;![endif]--&gt;
+&lt;!--[if gt IE 8]&gt;&lt;!--&gt; &lt;html class="no-js"&gt; &lt;!--&lt;![endif]--&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8"&gt;
+  &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+
+  &lt;title&gt;PLEASURE - Blank Page&lt;/title&gt;
+
+  &lt;meta name="description" content=""&gt;
+  &lt;meta name="author" content=""&gt;
+
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+  &lt;meta name="apple-mobile-web-app-capable" content="yes"&gt;
+  &lt;meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"&gt;
+
+  &lt;!-- BEGIN CORE CSS --&gt;
+  &lt;link rel="stylesheet" href="../../assets/admin1/css/admin1.css"&gt;
+  &lt;link rel="stylesheet" href="../../assets/globals/css/elements.css"&gt;
+  &lt;!-- END CORE CSS --&gt;
+
+  &lt;!-- BEGIN PLUGINS CSS --&gt;
+  &lt;link rel="stylesheet" href="../../assets/globals/css/plugins.css"&gt;
+  &lt;!-- END PLUGINS CSS --&gt;
+
+  &lt;!-- BEGIN SHORTCUT AND TOUCH ICONS --&gt;
+  &lt;link rel="shortcut icon" href="../../assets/globals/img/icons/favicon.ico"&gt;
+  &lt;link rel="apple-touch-icon" href="../../assets/globals/img/icons/apple-touch-icon.png"&gt;
+  &lt;!-- END SHORTCUT AND TOUCH ICONS --&gt;
+  &lt;script src="../../assets/globals/plugins/modernizr/modernizr.min.js"&gt;&lt;/script&gt;
+
+&lt;/head&gt;
+&lt;body&gt;
+</code></pre>
+
+            <legend>Navigation Sidebar</legend>
+<pre><code>&lt;div class="nav-bar-container"&gt;
+
+  &lt;!-- BEGIN ICONS --&gt;
+  &lt;div class="nav-menu"&gt;
+    &lt;div class="hamburger"&gt;
+      &lt;span class="patty"&gt;&lt;/span&gt;
+      &lt;span class="patty"&gt;&lt;/span&gt;
+      &lt;span class="patty"&gt;&lt;/span&gt;
+      &lt;span class="patty"&gt;&lt;/span&gt;
+      &lt;span class="patty"&gt;&lt;/span&gt;
+      &lt;span class="patty"&gt;&lt;/span&gt;
+    &lt;/div&gt;&lt;!--.hamburger--&gt;
+  &lt;/div&gt;&lt;!--.nav-menu--&gt;
+
+  &lt;div class="nav-search"&gt;
+    &lt;span class="search"&gt;&lt;/span&gt;
+  &lt;/div&gt;&lt;!--.nav-search--&gt;
+
+  &lt;div class="nav-user"&gt;
+    &lt;div class="user"&gt;
+      &lt;img src="../../assets/globals/img/faces/tolga-ergin.jpg" alt=""&gt;
+      &lt;span class="badge"&gt;3&lt;/span&gt;
+    &lt;/div&gt;&lt;!--.user--&gt;
+    &lt;div class="cross"&gt;
+      &lt;span class="line"&gt;&lt;/span&gt;
+      &lt;span class="line"&gt;&lt;/span&gt;
+    &lt;/div&gt;&lt;!--.cross--&gt;
+  &lt;/div&gt;&lt;!--.nav-user--&gt;
+  &lt;!-- END OF ICONS --&gt;
+
+  &lt;div class="nav-bar-border"&gt;&lt;/div&gt;&lt;!--.nav-bar-border--&gt;
+
+  &lt;!-- BEGIN OVERLAY HELPERS --&gt;
+  &lt;div class="overlay"&gt;
+    &lt;div class="starting-point"&gt;
+      &lt;span&gt;&lt;/span&gt;
+    &lt;/div&gt;&lt;!--.starting-point--&gt;
+  &lt;div class="logo"&gt;PLEASURE&lt;/div&gt;&lt;!--.logo--&gt;
+  &lt;/div&gt;&lt;!--.overlay--&gt;
+
+  &lt;div class="overlay-secondary"&gt;&lt;/div&gt;&lt;!--.overlay-secondary--&gt;
+  &lt;!-- END OF OVERLAY HELPERS --&gt;
+  &lt;/div&gt;&lt;!--.nav-bar-container--&gt;
+</code></pre>
+
+            <legend>Content Area (Breadcrumbs, Content, Footer)</legend>
+<pre><code>&lt;div class="content"&gt;
+
+  &lt;div class="page-header full-content"&gt;
+    &lt;div class="row"&gt;
+      &lt;div class="col-sm-6"&gt;
+        &lt;h1&gt;Blank Page &lt;small&gt;short description&lt;/small&gt;&lt;/h1&gt;
+      &lt;/div&gt;&lt;!--.col--&gt;
+      &lt;div class="col-sm-6"&gt;
+        &lt;ol class="breadcrumb"&gt;
+          &lt;li&gt;&lt;a href="#"&gt;&lt;i class="ion-home"&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href="#"&gt;Pages&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href="#" class="active"&gt;Blank Page&lt;/a&gt;&lt;/li&gt;
+        &lt;/ol&gt;
+      &lt;/div&gt;&lt;!--.col--&gt;
+    &lt;/div&gt;&lt;!--.row--&gt;
+  &lt;/div&gt;&lt;!--.page-header--&gt;
+
+  &lt;!-- content --&gt;
+    &lt;!-- PUT THE CONTENT HERE --&gt;
+  &lt;!-- content --&gt;
+
+  &lt;div class="footer-links margin-top-40"&gt;
+    &lt;div class="row no-gutters"&gt;
+      &lt;div class="col-xs-6 bg-indigo"&gt;
+        &lt;a href="pages-timeline.html"&gt;
+          &lt;span class="state"&gt;Pages&lt;/span&gt;
+          &lt;span&gt;Timeline&lt;/span&gt;
+          &lt;span class="icon"&gt;&lt;i class="ion-android-arrow-back"&gt;&lt;/i&gt;&lt;/span&gt;
+        &lt;/a&gt;
+      &lt;/div&gt;&lt;!--.col--&gt;
+      &lt;div class="col-xs-6 bg-cyan"&gt;
+        &lt;a href="components-offline-detector.html"&gt;
+          &lt;span class="state"&gt;Components&lt;/span&gt;
+          &lt;span&gt;Offline Detector&lt;/span&gt;
+          &lt;span class="icon"&gt;&lt;i class="ion-android-arrow-forward"&gt;&lt;/i&gt;&lt;/span&gt;
+        &lt;/a&gt;
+      &lt;/div&gt;&lt;!--.col--&gt;
+    &lt;/div&gt;&lt;!--.row--&gt;
+  &lt;/div&gt;&lt;!--.footer-links--&gt;
+
+  &lt;/div&gt;&lt;!--.content--&gt;
+</code></pre>
+
+            <legend>End of page</legend>
+<pre><code>  &lt;!-- BEGIN GLOBAL AND THEME VENDORS --&gt;
+  &lt;script src="../../assets/globals/js/global-vendors.js"&gt;&lt;/script&gt;
+  &lt;!-- END GLOBAL AND THEME VENDORS --&gt;
+
+  &lt;!-- BEGIN PLUGINS AREA --&gt;
+  &lt;!-- END PLUGINS AREA --&gt;
+
+  &lt;!-- PLUGINS INITIALIZATION AND SETTINGS --&gt;
+  &lt;!-- END PLUGINS INITIALIZATION AND SETTINGS --&gt;
+
+  &lt;!-- PLEASURE --&gt;
+  &lt;script src="../../assets/globals/js/pleasure.js"&gt;&lt;/script&gt;
+  &lt;!-- ADMIN 1 --&gt;
+  &lt;script src="../../assets/admin1/js/layout.js"&gt;&lt;/script&gt;
+
+  &lt;!-- BEGIN INITIALIZATION--&gt;
+  &lt;script&gt;
+  $(document).ready(function () {
+    Pleasure.init();
+    Layout.init();
+  });
+  &lt;/script&gt;
+  &lt;!-- END INITIALIZATION--&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+          </div><!--.slide-->
+
+          <div id="layout-configuration" class="slide">
+            <h1>Layout Configuration</h1>
+            <p>Here is basic wireframe of Pleasure Dashboard.</p>
+
+            <p>PLEASURE offers some layout settings such material rippled buttons and auto scroll when menu is open. These settings will be valid, if you add classes to the related html markup.</p>
+<pre><code>var Layout = {
+  settings: {
+    rippledButtons: true,
+    autoScrollWhenMenuIsActive: false
+  }
+}
+</code></pre>
+            <p>These layout setting also are reachable in <strong>assets/admin1/js/layout.js</strong> (compiled from build/admin1/js/layout.js).</p>
+          </div><!--.slide-->
+
+          <div id="style-configuration" class="slide">
+            <h1>Style Configuration</h1>
+
+            <h3># Colors</h3>
+            <div class="row">
+              <div class="col-md-2">
+                <div class="color-swatch primary">
+                  <div class="color"></div>
+                  <div class="color-name">Primary</div>
+                </div><!--.color-swatch-->
+              </div><!--.col-md-2-->
+
+              <div class="col-md-2">
+                <div class="color-swatch success">
+                  <div class="color"></div>
+                  <div class="color-name">Success</div>
+                </div><!--.color-swatch-->
+              </div><!--.col-md-2-->
+
+              <div class="col-md-2">
+                <div class="color-swatch info">
+                  <div class="color"></div>
+                  <div class="color-name">Info</div>
+                </div><!--.color-swatch-->
+              </div><!--.col-md-2-->
+
+              <div class="col-md-2">
+                <div class="color-swatch warning">
+                  <div class="color"></div>
+                  <div class="color-name">Warning</div>
+                </div><!--.color-swatch-->
+              </div><!--.col-md-2-->
+
+              <div class="col-md-2">
+                <div class="color-swatch danger">
+                  <div class="color"></div>
+                  <div class="color-name">Danger</div>
+                </div><!--.color-swatch-->
+              </div><!--.col-md-2-->
+            </div><!--.row-->
+
+            <p>Included <a href="http://www.google.com/design/spec/style/color.html" target="_blank">Material Colors.</a></p>
+
+            <div class="row">
+              <div class="col-md-3">
+                <div class="color-swatch red">
+                  <div class="color"></div>
+                  <div class="color-name">Red</div>
+                </div><!--.color-swatch-->
+              </div><!--.col-md-3-->
+
+              <div class="col-md-3">
+                <div class="color-swatch pink">
+                  <div class="color"></div>
+                  <div class="color-name">Pink</div>
+                </div><!--.color-swatch-->
+              </div><!--.col-md-3-->
+
+              <div class="col-md-3">
+                <div class="color-swatch purple">
+                  <div class="color"></div>
+                  <div class="color-name">Purple</div>
+                </div><!--.color-swatch-->
+              </div><!--.col-md-3-->
+
+              <div class="col-md-3">
+                <div class="color-swatch deep-purple">
+                  <div class="color"></div>
+                  <div class="color-name">Deep Purple</div>
+                </div><!--.color-swatch-->
+              </div><!--.col-md-3-->
+
+              <div class="col-md-3">
+                <div class="color-swatch indigo">
+                  <div class="color"></div>
+                  <div class="color-name">Indigo</div>
+                </div><!--.color-swatch-->
+              </div><!--.col-md-3-->
+
+              <div class="col-md-3">
+                <div class="color-swatch blue">
+                  <div class="color"></div>
+                  <div class="color-name">Blue</div>
+                </div><!--.color-swatch-->
+              </div><!--.col-md-3-->
+
+              <div class="col-md-3">
+                <div class="color-swatch light-blue">
+                  <div class="color"></div>
+                  <div class="color-name">Light Blue</div>
+                </div><!--.color-swatch-->
+              </div><!--.col-md-3-->
+
+              <div class="col-md-3">
+                <div class="color-swatch cyan">
+                  <div class="color"></div>
+                  <div class="color-name">Cyan</div>
+                </div><!--.color-swatch-->
+              </div><!--.col-md-3-->
+
+              <div class="col-md-3">
+                <div class="color-swatch teal">
+                  <div class="color"></div>
+                  <div class="color-name">Teal</div>
+                </div><!--.color-swatch-->
+              </div><!--.col-md-3-->
+
+              <div class="col-md-3">
+                <div class="color-swatch green">
+                  <div class="color"></div>
+                  <div class="color-name">Green</div>
+                </div><!--.color-swatch-->
+              </div><!--.col-md-3-->
+
+              <div class="col-md-3">
+                <div class="color-swatch light-green">
+                  <div class="color"></div>
+                  <div class="color-name">Light Green</div>
+                </div><!--.color-swatch-->
+              </div><!--.col-md-3-->
+
+              <div class="col-md-3">
+                <div class="color-swatch lime">
+                  <div class="color"></div>
+                  <div class="color-name">Lime</div>
+                </div><!--.color-swatch-->
+              </div><!--.col-md-3-->
+
+              <div class="col-md-3">
+                <div class="color-swatch yellow">
+                  <div class="color"></div>
+                  <div class="color-name">Yellow</div>
+                </div><!--.color-swatch-->
+              </div><!--.col-md-3-->
+
+              <div class="col-md-3">
+                <div class="color-swatch amber">
+                  <div class="color"></div>
+                  <div class="color-name">Amber</div>
+                </div><!--.color-swatch-->
+              </div><!--.col-md-3-->
+
+              <div class="col-md-3">
+                <div class="color-swatch orange">
+                  <div class="color"></div>
+                  <div class="color-name">Orange</div>
+                </div><!--.color-swatch-->
+              </div><!--.col-md-3-->
+
+              <div class="col-md-3">
+                <div class="color-swatch deep-orange">
+                  <div class="color"></div>
+                  <div class="color-name">Deep Orange</div>
+                </div><!--.color-swatch-->
+              </div><!--.col-md-3-->
+
+              <div class="col-md-3">
+                <div class="color-swatch brown">
+                  <div class="color"></div>
+                  <div class="color-name">Brown</div>
+                </div><!--.color-swatch-->
+              </div><!--.col-md-3-->
+
+              <div class="col-md-3">
+                <div class="color-swatch grey">
+                  <div class="color"></div>
+                  <div class="color-name">Grey</div>
+                </div><!--.color-swatch-->
+              </div><!--.col-md-3-->
+
+              <div class="col-md-3">
+                <div class="color-swatch blue-grey">
+                  <div class="color"></div>
+                  <div class="color-name">Blue Grey</div>
+                </div><!--.color-swatch-->
+              </div><!--.col-md-3-->
+            </div><!--.row-->
+
+            <h3># Using Colors in HTML Elements</h3>
+            <p>It is easy to use colors in any html element by adding color name to the class attribute of element. For example;</p>
+
+<pre><code>&lt;p class="text-red"&gt;
+  Sample text
+&lt;/p&gt;
+</code></pre>
+            <p>This code will produce; <span class="text-red">Sample Text</span></p>
+
+            <p>Or using colors in widgets is similar.</p>
+
+<pre><code>&lt;div class="card card-red"&gt;
+  ..
+&lt;/div&gt;&lt;!--.card--&gt;
+</code></pre>
+
+            <h3># Getting Colors via Javascript</h3>
+            <p>Sometimes you need to change colors via javascript. You can access defined colors like that</p>
+
+<pre><code>$(document).ready(function () {
+  var getColor = Pleasure.colors.red;
+  $('.selector').css('color', getColor);
+});
+</code></pre>
+
+
+          </div><!--.slide-->
+
+          <div id="animations" class="slide">
+            <h1>Animations</h1>
+            <p>When you need to animate </p>
+
+
+          </div><!--.animations-->
+
+          <div id="references" class="slide">
+            <h1>References</h1>
+            <p>Font Icons, images, css and js plugins</p>
+
+            <table class="table">
+              <caption>FONT ICONS</caption>
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><a href="https://github.com/FortAwesome/Font-Awesome" target="_blank">Font Awesome</a></td>
+                  <td>The iconic font and CSS toolkit</td>
+                </tr>
+                <tr>
+                  <td><a href="https://github.com/driftyco/ionicons" target="_blank">Ion Icons</a></td>
+                  <td>The premium icon font for Ionic Framework</td>
+                </tr>
+                <tr>
+                  <td><a href="https://github.com/erikflowers/weather-icons" target="_blank">Weather Icons</a></td>
+                  <td>Weather themed icons inspired by Font Awesome and ready for Bootstrap</td>
+                </tr>
+                <tr>
+                  <td><a href="http://glyphicons.com/" target="_blank">GlyphIcons</a></td>
+                  <td>GLYPHICONS is a library of precisely prepared monochromatic icons and symbols, created with an emphasis on simplicity and easy orientation.</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <table class="table">
+              <caption>STOCK IMAGES</caption>
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><a href="http://www.picjumbo.com/" target="_blank">Picjumbo</a></td>
+                  <td>totally free photos for your commercial &amp; personal works</td>
+                </tr>
+                <tr>
+                  <td><a href="http://subtlepatterns.com/" target="_blank">Subtle Patterns</a></td>
+                  <td>Free textures for your next web project</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <table class="table">
+              <caption>COLORS</caption>
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><a href="http://designmodo.com/flat-free/" target="_blank">Flat UI Colors</a></td>
+                  <td>Flat colors</td>
+                </tr>
+                <tr>
+                  <td><a href="http://brandcolors.net/" target="_blank">Brand Colors</a></td>
+                  <td>Brand colors such as facebook, twitter etc.</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <table class="table count-rows">
+              <caption>GLOBAL VENDORS</caption>
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><a href="http://modernizr.com/" target="_blank">Modernizr</a></td>
+                  <td>Modernizr is a JavaScript library that detects HTML5 and CSS3 features in the user’s browser.</td>
+                </tr>
+                <tr>
+                  <td><a href="http://jquery.com/" target="_blank">jQuery</a></td>
+                  <td>jQuery JavaScript Library</td>
+                </tr>
+                <tr>
+                  <td><a href="http://jqueryui.com/" target="_blank">jQuery UI</a></td>
+                  <td>The official jQuery user interface library</td>
+                </tr>
+                <tr>
+                  <td><a href="http://getbootstrap.com/" target="_blank">Bootstrap</a></td>
+                  <td>The most popular HTML, CSS, and JavaScript framework for developing responsive, mobile first projects on the web.</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <table class="table count-rows">
+              <caption>THEME VENDORS</caption>
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><a href="http://codeseven.github.io/toastr/" target="_blank">Toastr Notifications</a></td>
+                  <td>Toastr is a Javascript library for Gnome / Growl type non-blocking notifications. jQuery is required. The goal is to create a simple core library that can be customized and extended.</td>
+                </tr>
+                <tr>
+                  <td><a href="https://github.com/carhartl/jquery-cookie" target="_blank">jQuery Cookie</a></td>
+                  <td>A simple, lightweight jQuery plugin for reading, writing and deleting cookies</td>
+                </tr>
+                <tr>
+                  <td><a href="https://github.com/CWSpear/bootstrap-hover-dropdown" target="_blank">Bootstrap Hover Dropdown</a></td>
+                  <td>An unofficial Bootstrap plugin to enable Bootstrap dropdowns to activate on hover and provide a nice user experience.</td>
+                </tr>
+                <tr>
+                  <td><a href="http://momentjs.com/" target="_blank">Moment.js</a></td>
+                  <td>Parse, validate, manipulate, and display dates in javascript.</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <table class="table count-rows">
+              <caption>PLUGINS</caption>
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><a href="http://kolber.github.io/audiojs/" target="_blank">Audio.js</a></td>
+                  <td>audio.js is a drop-in javascript library that allows HTML5’s <audio> tag to be used anywhere.</td>
+                </tr>
+                <tr>
+                  <td><a href="http://www.jacklmoore.com/autosize/" target="_blank">Autosize</a></td>
+                  <td>A plugin to automatically adjust textarea height.</td>
+                </tr>
+                <tr>
+                  <td><a href="http://srobbin.com/jquery-plugins/backstretch/" target="_blank">Backstretch</a></td>
+                  <td>a simple jQuery plugin that allows you to add a dynamically-resized, slideshow-capable background image to any page or element</td>
+                </tr>
+                <tr>
+                  <td><a href="http://dfcb.github.io/BigVideo.js/" target="_blank">Bigvideo.js</a></td>
+                  <td>The jquery plugin for big background video and images</td>
+                </tr>
+                <tr>
+                  <td><a href="https://github.com/blueimp/Gallery" target="_blank">Blueimp Gallery</a></td>
+                  <td>blueimp Gallery is a touch-enabled, responsive and customizable image &amp; video gallery, carousel and lightbox, optimized for both mobile and desktop web browsers.</td>
+                </tr>
+                <tr>
+                  <td><a href="http://botmonster.com/jquery-bootpag/" target="_blank">Bootpag</a></td>
+                  <td>dynamic pagination jQuery plugin</td>
+                </tr>
+                <tr>
+                  <td><a href="https://github.com/mjolnic/bootstrap-colorpicker" target="_blank">Bootstrap Color Picker</a></td>
+                  <td>Colorpicker plugin for Twitter Bootstrap</td>
+                </tr>
+                <tr>
+                  <td><a href="https://github.com/dangrossman/bootstrap-daterangepicker" target="_blank">Bootstrap Date Range Picker</a></td>
+                  <td>Date range picker component for Bootstrap</td>
+                </tr>
+                <tr>
+                  <td><a href="http://www.malot.fr/bootstrap-datetimepicker/" target="_blank">Bootstrap Date Time Picker</a></td>
+                  <td>Bootstrap form component to handle date and time data.</td>
+                </tr>
+                <tr>
+                  <td><a href="https://github.com/blueimp/Bootstrap-Image-Gallery" target="_blank">Bootstrap Image Gallery</a></td>
+                  <td>Bootstrap Image Gallery is an extension to blueimp Gallery, a touch-enabled, responsive and customizable image and video gallery.</td>
+                </tr>
+                <tr>
+                  <td><a href="http://toopay.github.io/bootstrap-markdown/" target="_blank">Bootstrap Markdown</a></td>
+                  <td>Bootstrap-Markdown designed to be easily integrated with your bootstrap project.</td>
+                </tr>
+                <tr>
+                  <td><a href="http://mimo84.github.io/bootstrap-maxlength/" target="_blank">Bootstrap MaxLength</a></td>
+                  <td>Bootstrap-Maxlength uses a Twitter Bootstrap label to show a visual feedback to the user about the maximum length of the field where the user is inserting text.</td>
+                </tr>
+                <tr>
+                  <td><a href="https://github.com/jschr/bootstrap-modal/" target="_blank">Bootstrap Modal</a></td>
+                  <td>Extends the default Bootstrap Modal class. Responsive, stackable, ajax and more.</td>
+                </tr>
+                <tr>
+                  <td><a href="https://github.com/ablanco/jquery.pwstrength.bootstrap/" target="_blank">Bootstrap Password Strength</a></td>
+                  <td>jQuery Password Strength Meter for Twitter Bootstrap</td>
+                </tr>
+                <tr>
+                  <td><a href="http://silviomoreto.github.io/bootstrap-select/" target="_blank">Bootstrap Select</a></td>
+                  <td>A custom select for @twitter bootstrap using button dropdown.</td>
+                </tr>
+                <tr>
+                  <td><a href="https://github.com/orangehill/bootstrap-session-timeout" target="_blank">Bootstrap Session Timeout</a></td>
+                  <td>Session timeout and keep-alive control with a nice Bootstrap warning dialog.</td>
+                </tr>
+                <tr>
+                  <td><a href="http://lipis.github.io/bootstrap-social/" target="_blank">Bootstrap Social Buttons</a></td>
+                  <td>Social Sign-In Buttons made in pure CSS based on Bootstrap and Font Awesome!</td>
+                </tr>
+                <tr>
+                  <td><a href="http://www.bootstrap-switch.org/" target="_blank">Bootstrap Switch</a></td>
+                  <td>Turn checkboxes and radio buttons in toggle switches.</td>
+                </tr>
+                <tr>
+                  <td><a href="https://github.com/wenzhixin/bootstrap-table/" target="_blank">Bootstrap Table</a></td>
+                  <td>An extended Bootstrap table with radio, checkbox, sort, pagination, and other added features. </td>
+                </tr>
+                <tr>
+                  <td><a href="http://jdewit.github.io/bootstrap-timepicker/" target="_blank">Bootstrap Time Picker</a></td>
+                  <td>Turn checkboxes and radio buttons in toggle switches.</td>
+                </tr>
+                <tr>
+                  <td><a href="http://www.virtuosoft.eu/code/bootstrap-touchspin/" target="_blank">Bootstrap TouchSpin</a></td>
+                  <td>A mobile and touch friendly input spinner component for Bootstrap 3. It supports the mousewheel and the up/down keys.</td>
+                </tr>
+                <tr>
+                  <td><a href="http://vadimg.com/twitter-bootstrap-wizard-example/" target="_blank">Bootstrap Wizard Plugin</a></td>
+                  <td>This twitter bootstrap plugin builds a wizard out of a formatter tabbable structure.</td>
+                </tr>
+                <tr>
+                  <td><a href="http://jhollingworth.github.io/bootstrap-wysihtml5/" target="_blank">Bootstrap Wysihtml5</a></td>
+                  <td>Simple, beautiful wysiwyg editors</td>
+                </tr>
+                <tr>
+                  <td><a href="http://c3js.org/" target="_blank">C3.js</a></td>
+                  <td>D3-based reusable chart library</td>
+                </tr>
+                <tr>
+                  <td><a href="http://www.chartjs.org/" target="_blank">Chart JS</a></td>
+                  <td>Simple, clean and engaging charts for designers and developers</td>
+                </tr>
+                <tr>
+                  <td><a href="http://harvesthq.github.io/chosen/" target="_blank">Chosen</a></td>
+                  <td>Chosen is a jQuery plugin that makes long, unwieldy select boxes much more user-friendly.</td>
+                </tr>
+                <tr>
+                  <td><a href="http://vitalets.github.io/clockface/" target="_blank">Clockface</a></td>
+                  <td>timepicker for Twitter Bootstrap</td>
+                </tr>
+                <tr>
+                  <td><a href="http://hilios.github.io/jQuery.countdown/" target="_blank">Countdown</a></td>
+                  <td>A simple and html agnostic date countdown plugin for jQuery</td>
+                </tr>
+                <tr>
+                  <td><a href="https://github.com/fengyuanchen/cropper" target="_blank">Cropper JS</a></td>
+                  <td>A simple jQuery image cropping plugin.</td>
+                </tr>
+                <tr>
+                  <td><a href="http://d3js.org/" target="_blank">D3.js</a></td>
+                  <td>D3.js is a JavaScript library for manipulating documents based on data</td>
+                </tr>
+                <tr>
+                  <td><a href="http://datatables.net/" target="_blank">DataTables</a></td>
+                  <td>Simple, clean and engaging charts for designers and developers</td>
+                </tr>
+                <tr>
+                  <td><a href="http://www.dropzonejs.com/" target="_blank">Dropzone</a></td>
+                  <td>DropzoneJS is an open source library that provides drag'n'drop file uploads with image previews.</td>
+                </tr>
+                <tr>
+                  <td><a href="http://hassankhan.github.io/emojify.js/" target="_blank">Emojify</a></td>
+                  <td>Emojify</td>
+                </tr>
+                <tr>
+                  <td><a href="http://www.flotcharts.org/" target="_blank">Flot Charts</a></td>
+                  <td>Attractive JavaScript plotting for jQuery</td>
+                </tr>
+                <tr>
+                  <td><a href="http://fullcalendar.io/" target="_blank">Full Calendar</a></td>
+                  <td>A JavaScript event calendar. Customizable and open source.</td>
+                </tr>
+                <tr>
+                  <td><a href="http://ubilabs.github.io/geocomplete/" target="_blank">Geo Complete</a></td>
+                  <td>jQuery Geocoding and Places Autocomplete Plugin</td>
+                </tr>
+                <tr>
+                  <td><a href="https://github.com/hpneo/gmaps" target="_blank">Gmaps.js</a></td>
+                  <td>the easiest way to use Google Maps</td>
+                </tr>
+                <tr>
+                  <td><a href="http://handlebarsjs.com/" target="_blank">Handlebars</a></td>
+                  <td>Handlebars provides the power necessary to let you build semantic templates effectively with no frustration.</td>
+                </tr>
+                <tr>
+                  <td><a href="https://highlightjs.org/" target="_blank">Highlight JS</a></td>
+                  <td>Syntax highlighting for the Web</td>
+                </tr>
+                <tr>
+                  <td><a href="http://imsky.github.io/holder/" target="_blank">Holder JS</a></td>
+                  <td>Holder renders image placeholders entirely in browser.</td>
+                </tr>
+                <tr>
+                  <td><a href="http://fronteed.com/iCheck/" target="_blank">iCheck</a></td>
+                  <td>Super customized checkboxes and radio buttons for jQuery and Zepto.</td>
+                </tr>
+                <tr>
+                  <td><a href="https://github.com/hopkinschris/indicator.js" target="_blank">Indicator.js</a></td>
+                  <td>A visual password strength indicator inspired by Stripe./td>
+                </tr>
+                <tr>
+                  <td><a href="https://github.com/RobinHerbots/jquery.inputmask" target="_blank">Input Mask</a></td>
+                  <td>jQuery Input Mask plugin</td>
+                </tr>
+                <tr>
+                  <td><a href="http://ionden.com/a/plugins/ion.rangeSlider/en.html" target="_blank">Ion Range Slider</a></td>
+                  <td>jQuery range slider with skin support</td>
+                </tr>
+                <tr>
+                  <td><a href="http://ionden.com/a/plugins/ion.sound/en.html" target="_blank">Ion Sounds</a></td>
+                  <td>JavaScript plugin for playing sounds and music on websites</td>
+                </tr>
+                <tr>
+                  <td><a href="https://github.com/felipevolpatto/jquery-input-ip-address-control" target="_blank">Input IP Mask</a></td>
+                  <td>Plugin controls the format of IPv4 or IPv6 addresses.</td>
+                </tr>
+                <tr>
+                  <td><a href="http://jasny.github.io/bootstrap/javascript/#fileinput" target="_blank">Jasny File Input</a></td>
+                  <td>The file input plugin allows you to create a visually appealing file or image input widgets.</td>
+                </tr>
+                <tr>
+                  <td><a href="http://deepliquid.com/content/Jcrop.html" target="_blank">jCrop</a></td>
+                  <td>Jcrop is the quick and easy way to add image cropping functionality to your web application.</td>
+                </tr>
+                <tr>
+                  <td><a href="https://blueimp.github.io/jQuery-File-Upload/" target="_blank">jQuery File Upload</a></td>
+                  <td>File Upload widget with multiple file selection, drag&amp;drop support, progress bars, validation and preview images, audio and video for jQuery.</td>
+                </tr>
+                <tr>
+                  <td><a href="http://jqueryvalidation.org/" target="_blank">jQuery Validation</a></td>
+                  <td>This jQuery plugin makes simple clientside form validation easy, whilst still offering plenty of customization options.</td>
+                </tr>
+                <tr>
+                  <td><a href="http://jqvmap.com/" target="_blank">jqvMap</a></td>
+                  <td>JQVMap is a jQuery plugin that renders Vector Maps.</td>
+                </tr>
+                <tr>
+                  <td><a href="https://github.com/lindell/JsBarcode" target="_blank">JS Barcode</a></td>
+                  <td>Create different type of barcodes with javascript</td>
+                </tr>
+                <tr>
+                  <td><a href="http://www.jstree.com/" target="_blank">JS Tree</a></td>
+                  <td>jsTree is jquery plugin, that provides interactive trees.</td>
+                </tr>
+                <tr>
+                  <td><a href="http://anthonyterrien.com/knob/" target="_blank">Knob Charts</a></td>
+                  <td>Nice, downward compatible, touchable, jQuery dial</td>
+                </tr>
+                <tr>
+                  <td><a href="leafletjs.com" target="_blank">Leaflet Maps</a></td>
+                  <td>An Open-Source JavaScript Library for Mobile-Friendly Interactive Maps</td>
+                </tr>
+                <tr>
+                  <td><a href="http://masonry.desandro.com/" target="_blank">Masonry</a></td>
+                  <td>Masonry is a JavaScript grid layout library.</td>
+                </tr>
+                <tr>
+                  <td><a href="https://github.com/daviferreira/medium-editor" target="_blank">Medium Editor</a></td>
+                  <td>Medium.com WYSIWYG editor clone</td>
+                </tr>
+                <tr>
+                  <td><a href="https://github.com/claviska/jquery-miniColors/" target="_blank">Mini Colors</a></td>
+                  <td>jQuery MiniColors Plugin</td>
+                </tr>
+                <tr>
+                  <td><a href="https://github.com/lou/multi-select/" target="_blank">Multi Select</a></td>
+                  <td>A user-friendlier drop-in replacement for the standard select with multiple attribute activated</td>
+                </tr>
+                <tr>
+                  <td><a href="http://refreshless.com/nouislider/" target="_blank">NO UI Slider</a></td>
+                  <td>noUiSlider is a range slider without bloat. It offers a ton off features, and it is as small, lightweight and minimal as possible, which is great for mobile use on the many supported devices, including iPhone, iPad, Android devices &amp; Windows (Phone) 8 desktops, tablets and all-in-ones.</td>
+                </tr>
+                <tr>
+                  <td><a href="https://github.com/HubSpot/offline/" target="_blank">Offline Detector</a></td>
+                  <td>Automatically display online/offline indication to your users.</td>
+                </tr>
+                <tr>
+                  <td><a href="https://github.com/yuku-t/jquery-overlay" target="_blank">Overlay</a></td>
+                  <td>Simple Decorator for Textarea</td>
+                </tr>
+                <tr>
+                  <td><a href="https://github.com/HubSpot/PACE/" target="_blank">Pace</a></td>
+                  <td>Automatically add a progress bar to your site.</td>
+                </tr>
+                <tr>
+                  <td><a href="http://parsleyjs.org/" target="_blank">Parsley</a></td>
+                  <td>Parsley, the ultimate JavaScript form validation library.</td>
+                </tr>
+                <tr>
+                  <td><a href="http://kilianvalkhof.com/jquerypulsate/" target="_blank">Pulsate</a></td>
+                  <td>jQuery.pulsate.js adds a pulsating effect to elements. Useful for drawing the users attention.</td>
+                </tr>
+                <tr>
+                  <td><a href="https://github.com/riklomas/quicksearch" target="_blank">Quick Search</a></td>
+                  <td>A jQuery plugin for searching through tables, lists, etc quickly</td>
+                </tr>
+                <tr>
+                  <td><a href="http://brianreavis.github.io/selectize.js/" target="_blank">Selectize.js</a></td>
+                  <td>Selectize is the hybrid of a textbox and &lt;select&gt; box. It's jQuery-based and it's useful for tagging, contact lists, country selectors, and so on.</td>
+                </tr>
+                <tr>
+                  <td><a href="http://omnipotent.net/jquery.sparkline/#s-about" target="_blank">Sparklines</a></td>
+                  <td>This jQuery plugin generates sparklines (small inline charts) directly in the browser using data supplied either inline in the HTML, or via javascript.</td>
+                </tr>
+                <tr>
+                  <td><a href="http://git.aaronlumsden.com/strength.js/" target="_blank">Strength.js</a></td>
+                  <td>The ultimate jQuery password input plugin. Featuring secure strength indicator and hide/show password</td>
+                </tr>
+                <tr>
+                  <td><a href="https://github.com/stripe/jquery.payment" target="_blank">Stripe Payment</a></td>
+                  <td>A general purpose library for building credit card forms, validating inputs and formatting numbers.</td>
+                </tr>
+                <tr>
+                  <td><a href="https://hackerwins.github.io/summernote/" target="_blank">Summernote</a></td>
+                  <td>Super Simple WYSIWYG Editor on Bootstrap</td>
+                </tr>
+                <tr>
+                  <td><a href="http://abpetkov.github.io/switchery/" target="_blank">Switchery</a></td>
+                  <td>Switchery is a simple component that helps you turn your default HTML checkbox inputs into beautiful iOS 7 style switches in just few simple steps.</td>
+                </tr>
+                <tr>
+                  <td><a href="https://github.com/yuku-t/jquery-textcomplete" target="_blank">Text Complete</a></td>
+                  <td>Introduce autocompleting power to textareas, like GitHub comment forms have.</td>
+                </tr>
+                <tr>
+                  <td><a href="https://twitter.github.io/typeahead.js/" target="_blank">Typeahead.js</a></td>
+                  <td>A flexible JavaScript library that provides a strong foundation for building robust typeaheads</td>
+                </tr>
+                <tr>
+                  <td><a href="http://www.videojs.com/" target="_blank">Video.js</a></td>
+                  <td>Open source HTML5 &amp; Flash video player</td>
+                </tr>
+                <tr>
+                  <td><a href="https://github.com/typekit/webfontloader" target="_blank">Web Font Loader</a></td>
+                  <td>Web Font Loader gives you added control when using linked fonts via @font-face.</td>
+                </tr>
+
+
+              </tbody>
+            </table>
+          </div><!--.slide-->
+
+          <div id="version-history" class="slide">
+            <h1>Version History</h1>
+            <p></p>
+
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Version</th>
+                  <th>Date</th>
+                  <th>Changes</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1.0</td>
+                  <td>February 26, 2015</td>
+                  <td>First submission to Themeforest</td>
+                </tr>
+              </tbody>
+            </table>
+          </div><!--.slide-->
+
+        </div><!--.col-md-8-->
+        <div class="col-md-3 col-md-offset-1" id="affix-nav">
+            <ul class="nav nav-tabs nav-stacked vertical" data-spy="affix">
+                <li class="active"><a href="#getting-started">Getting Started</a></li>
+                <li><a href="#file-structure">File Structure</a></li>
+                <li><a href="#html-structure">HTML Structure</a></li>
+                <li><a href="#layout-configuration">Layout Configuration</a></li>
+                <li><a href="#style-configuration">Style Configuration</a></li>
+                <li><a href="#references">References</a></li>
+                <li><a href="#version-history">Version History</a></li>
+            </ul>
+        </div><!--.col-md-3-->
+      </div><!--.row-->
+    </div><!--.content-container-->
+  </div><!--.container-->
+
+  <script src="assets/js/global-vendors.js"></script>
+  <script>
+  $(document).ready(function () {
+    hljs.initHighlighting();
+
+    $window = $(window);
+    $('.intro').width( $window.width()-40 ).height( $window.height()-40 );
+
+    $('.nav-tabs').affix({
+      offset: {
+        top: $('.intro').height()
+      }
+    });
+
+    $('.count-rows').each(function () {
+      $(this).find('caption').append( ' ('+ ($(this).find('tr').length) + ')' );
+    });
+  });
+
+  $(window).resize(function () {
+    $('.intro').width( $window.width()-40 ).height( $window.height()-40 );
+    $('.nav-tabs').affix({
+      offset: {
+        top: $('.intro').height()
+      }
+    });
+  });
+  </script>
+
+  <!-- BEGIN Google Analytics -->
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-11816554-27', 'auto');
+    ga('send', 'pageview');
+  </script>
+  <!-- END Google Analytics -->
+
+</body>
+</html>

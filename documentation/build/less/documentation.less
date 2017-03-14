@@ -1,0 +1,151 @@
+@import url("http://fonts.googleapis.com/css?family=RobotoDraft:300,400,500");
+@import "../../assets/plugins/bootstrap/less/bootstrap";
+@import "colors";
+@import "variables";
+@import "defaults";
+@import "mixins/color-swatch";
+
+.documentation{
+	.intro{
+		margin: 20px;
+		position: relative;
+		background: #3b97d3;
+		.teamfox{
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			margin: -201px 0 0 -180px;
+		}
+	}
+
+	ul.nav-tabs.affix{
+		top: 60px;
+	}
+	.nav-tabs.vertical{
+		a{
+			padding: 10px 30px;
+			font-size: 16px;
+		}
+	}
+	.slide{
+		min-height: 100vh;
+		padding: 40px 0;
+		h1{
+			font-size: 40px;
+			margin-bottom: 70px;
+		}
+		p{
+			font-size: 20px;
+			margin: 20px 0;
+			color: #555;
+		}
+
+	}
+}
+
+pre{
+	font-size: 14px;
+}
+
+.color-swatch{
+	margin: 15px 0;
+	.color{
+		background: #fff;
+		padding: 30px 10px;
+	}
+	.color-name{
+		color: @text-color;
+		padding: 10px;
+		text-align: center;
+	}
+
+	&.primary{
+		.color-swatch-variant(@brand-primary, @white);
+	}
+	&.success{
+		.color-swatch-variant(@brand-success, @white);
+	}
+	&.info{
+		.color-swatch-variant(@brand-info, @white);
+	}
+	&.warning{
+		.color-swatch-variant(@brand-warning, @white);
+	}
+	&.danger{
+		.color-swatch-variant(@brand-danger, @white);
+	}
+
+	&.red{
+		.color-swatch-variant(@red, @white);
+	}
+	&.pink{
+		.color-swatch-variant(@pink, @white);
+	}
+	&.purple{
+		.color-swatch-variant(@purple, @white);
+	}
+	&.deep-purple{
+		.color-swatch-variant(@deep-purple, @white);
+	}
+	&.indigo{
+		.color-swatch-variant(@indigo, @white);
+	}
+	&.blue{
+		.color-swatch-variant(@blue, @white);
+	}
+	&.light-blue{
+		.color-swatch-variant(@light-blue, @white);
+	}
+	&.cyan{
+		.color-swatch-variant(@cyan, @white);
+	}
+	&.teal{
+		.color-swatch-variant(@teal, @white);
+	}
+	&.green{
+		.color-swatch-variant(@green, @white);
+	}
+	&.light-green{
+		.color-swatch-variant(@light-green, @white);
+	}
+	&.cyan{
+		.color-swatch-variant(@cyan, @white);
+	}
+	&.teal{
+		.color-swatch-variant(@teal, @white);
+	}
+	&.green{
+		.color-swatch-variant(@green, @white);
+	}
+	&.light-green{
+		.color-swatch-variant(@light-green, @white);
+	}
+	&.lime{
+		.color-swatch-variant(@lime, @white);
+	}
+	&.yellow{
+		.color-swatch-variant(@yellow, @text-color);
+	}
+	&.amber{
+		.color-swatch-variant(@amber, @white);
+	}
+	&.orange{
+		.color-swatch-variant(@orange, @white);
+	}
+	&.deep-orange{
+		.color-swatch-variant(@deep-orange, @white);
+	}
+	&.brown{
+		.color-swatch-variant(@brown, @white);
+	}
+	&.grey{
+		.color-swatch-variant(@grey, @white);
+	}
+	&.blue-grey{
+		.color-swatch-variant(@blue-grey, @white);
+	}
+}
+
+.text-red{
+	.text-emphasis-variant(@red);
+}

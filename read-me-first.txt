@@ -1,0 +1,5 @@
+IMPORTANT LICENSE NOTES
+
+For demo files, Pleasure used some photos purchased from http://www.photodune.net (assets/globals/img/faces/), If you want use these images, you need to purchase a license for each used image.
+
+Photos In assets/globals/img/picjumbo/ folder are free to use because they are open sources images.

@@ -1,0 +1,28 @@
+# Turn Rewrite Engine On
+RewriteEngine On
+
+# NC makes the rule non case sensitive
+# L makes this the last rule that this specific condition will match
+# $ in the regular expression makes the matching stop so that "customblah" will not work
+
+# Rewrite for user.php?u=xxxxx
+RewriteRule ^user/([0-9a-zA-Z]+)$ user.php?u=$1 [NC,L]
+
+# Rewrite for index.php?u=xxxxx
+RewriteRule ^index/([0-9a-zA-Z]+)$ index.php?u=$1 [NC,L]
+
+# Rewrite for group.php?u=xxxxx
+RewriteRule ^group/([0-9a-zA-Z_]+)$ group.php?u=$1 [NC,L]
+
+
+
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^(.*)$ $1.php
+
+
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.html -f
+RewriteRule ^(.*)$ $1.html
