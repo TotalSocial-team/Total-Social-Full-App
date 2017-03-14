@@ -292,7 +292,7 @@ function restrict( elem ) {
           _("status_login").innerHTML = "loginblocked!";
 				  _("loginbtn").style.display = "block";
         }else {
-				  window.location = "/v2/app/dashboard/index/"+ajax.responseText;
+				  window.location = "/app/dashboard/index/"+ajax.responseText;
 				}
 				  }
 				}
